@@ -31,12 +31,12 @@ public class Contact{
     return (String)person.get("lastName");
   }
   public String getEmail(){
-return (String)person.get("email");
+    return (String)person.get("email");
   }
   public String getPhoneNumber(){
-return (String)person.get("phoneNumber");
+    return (String)person.get("phoneNumber");
   }
   public String getDateMet(){
-return (String)person.get("initDate");
+    return person.get("initDate").toString();
   }
 }
