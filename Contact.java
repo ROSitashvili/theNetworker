@@ -21,9 +21,11 @@ public class Contact{
     this(fN,"",el,"");
   }
 
+  public String toString(){
+    return this.getFirstName()+" "+this.getLastName();
+  }
 
   //GET METHODS
-
   public String getFirstName(){
     return (String)person.get("firstName");
   }
