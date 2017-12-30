@@ -1,5 +1,6 @@
 import java.time.LocalDateTime;
 import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
 
 public class Contact{
   private JSONObject person = new JSONObject();
@@ -22,7 +23,7 @@ public class Contact{
   }
 
   public String toString(){
-    return this.getFirstName()+" "+this.getLastName();
+    return JSONValue.toJSONString(person);
   }
 
   //GET METHODS
