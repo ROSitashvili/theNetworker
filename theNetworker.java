@@ -14,29 +14,7 @@ public class theNetworker{
        ioe.printStackTrace();
     }
       addNewContact(allContacts);
-    // BufferedReader reader = null;
-    // try{
-    //   reader = new BufferedReader(new FileReader(contactInformation));
-    //   String text = null;
-    //   String aLine = null;
-    //   while (( aLine = reader.readLine()) != null){
-    //     text+=aLine;
-    //   }
-    // }
-    // catch (FileNotFoundException e){
-    //   e.printStackTrace();
-    // }
-    // catch (IOException e){
-    //   e.printStackTrace();
-    // }
-    // finally{
-    //   try{
-    //       if (reader != null){
-    //           reader.close();
-    //       }
-    //   } catch (IOException e){
-    //   }
-    // }
+
 
   }
 //USER INTERACTION FUNCTIONS
@@ -62,5 +40,32 @@ public class theNetworker{
 
 
     return listToAdd;
+  }
+
+  public static ArrayList<Contact> retrieveContact(ArrayList<Contact> listToFind, File toOPen){
+    // BufferedReader reader = null;
+    // try{
+    //   reader = new BufferedReader(new FileReader(contactInformation));
+    //   String text = null;
+    //   String aLine = null;
+    //   while (( aLine = reader.readLine()) != null){
+    //     text+=aLine;
+    //   }
+    // }
+    // catch (FileNotFoundException e){
+    //   e.printStackTrace();
+    // }
+    // catch (IOException e){
+    //   e.printStackTrace();
+    // }
+    // finally{
+    //   try{
+    //       if (reader != null){
+    //           reader.close();
+    //       }
+    //   } catch (IOException e){
+    //   }
+    // }
+
   }
 }
