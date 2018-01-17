@@ -7,7 +7,11 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class theNetworker{
+
+
   public static void main(String args[]){
+
+
     JSONObject allContacts = new JSONObject();
     File contactInformation = new File("theNetworkerContactInformation.json");
     try{//Creates file for storage of contacts
@@ -16,28 +20,24 @@ public class theNetworker{
     catch(IOException ioe){
        ioe.printStackTrace();
     }
-    //addNewContact(allContacts);
+    addNewContact(allContacts);
     retrieveContact(allContacts,contactInformation);
-    for(int i = 0; i<allContacts.size();i++ ){
-      //System.out.print(allContacts.get(i));
-    }
-
 
   }
 //USER INTERACTION FUNCTIONS
-  public static ArrayList<Contact> addNewContact(JSONObject listToAdd){
-    Contact bill = new Contact("bill","myers","email@outlook.ca","6131234567");
-    Contact margaret = new Contact("margaret","myers","margaret@outlook.ca","9381234567");
-    Contact bifll = new Contact("bill","myers","email@outlook.ca","6131234567");
-    Contact mafargaret = new Contact("margaret","myers","margaret@outlook.ca","9381234567");
-    Contact bidll = new Contact("bill","myers","email@outlook.ca","6131234567");
-    Contact marasgaret = new Contact("margaret","myers","margaret@outlook.ca","9381234567");
-    listToAdd.put(bill);
-    listToAdd.put(margaret);
-    listToAdd.put(bifll);
-    listToAdd.put(mafargaret);
-    listToAdd.put(bidll);
-    listToAdd.put(marasgaret);
+  public static JSONObject addNewContact(JSONObject listToAdd){
+    Contact bill = new Contact("bill","myers","email@outlook.ca","6131234567",1);
+    Contact margaret = new Contact("margaret","myers","margaret@outlook.ca","9381234567",2);
+    Contact bifll = new Contact("bill","myers","email@outlook.ca","6131234567",3);
+    Contact mafargaret = new Contact("margaret","myers","margaret@outlook.ca","9381234567",4);
+    Contact bidll = new Contact("bill","myers","email@outlook.ca","6131234567",5);
+    Contact marasgaret = new Contact("margaret","myers","margaret@outlook.ca","9381234567",6);
+    listToAdd.put(bill.getIDNumber(),bill);
+    listToAdd.put(margaret.getIDNumber(), margaret);
+    listToAdd.put(bifll.getIDNumber(),bifll);
+    listToAdd.put(mafargaret.getIDNumber(), mafargaret);
+    listToAdd.put(bidll.getIDNumber(),bidll);
+    listToAdd.put(marasgaret.getIDNumber(), marasgaret);
 
     Writer writer = null;
     try{
@@ -125,4 +125,5 @@ public class theNetworker{
 
     return listToFind;
   }
+
 }

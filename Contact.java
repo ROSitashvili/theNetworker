@@ -7,19 +7,20 @@ public class Contact{
   private LocalDateTime nextMeet;
 
 //CONSTRUCTORS
-  public Contact(String fN, String lN, String el, String pN){
+  public Contact(String fN, String lN, String el, String pN, int idNumber){
     person.put("firstName",fN);
     person.put("lastName",lN);
     person.put("email",el);
     person.put("phoneNumber",pN);
-    person.put("initDate",LocalDateTime.now());
+    person.put("initDate",(""+LocalDateTime.now())+"");
+    person.put("ID",idNumber);
   }
 
-  public Contact(String fN, String lN, String el){
-    this(fN,lN,el,"");
+  public Contact(String fN, String lN, String el, int idNumber){
+    this(fN,lN,el,"",idNumber);
   }
-  public Contact(String fN, String el){
-    this(fN,"",el,"");
+  public Contact(String fN, String el, int idNumber){
+    this(fN,"",el,"",idNumber);
   }
 
   public String toString(){
@@ -41,5 +42,8 @@ public class Contact{
   }
   public String getDateMet(){
     return person.get("initDate").toString();
+  }
+  public String getIDNumber(){
+    return Integer.toString((int)person.get("ID"));
   }
 }
