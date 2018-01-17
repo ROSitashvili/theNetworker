@@ -1,1 +1,0 @@
-[{"firstName":"bill","lastName":"myers","phoneNumber":"6131234567","initDate":2017-12-30T01:29:48.408,"email":"email@outlook.ca"},{"firstName":"margaret","lastName":"myers","phoneNumber":"9381234567","initDate":2017-12-30T01:29:48.548,"email":"margaret@outlook.ca"}]
