@@ -2,9 +2,8 @@ import java.time.LocalDateTime;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 
-public class Contact{
+public class Contact extends Schedualable{
   private JSONObject person = new JSONObject();
-  private LocalDateTime nextMeet;
 
 //CONSTRUCTORS
   public Contact(String fN, String lN, String el, String pN, int idNumber){
