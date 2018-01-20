@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.io.*;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -10,10 +11,6 @@ public class theNetworker{
 
 
   public static void main(String args[]){
-    Contact bill = new Contact("bill","myers","email@outlook.ca","6131234567",1);
-    System.out.println("HEIRARCHY TEST?");
-    bill.printAThing();
-
     JSONObject allContacts = new JSONObject();
     File contactInformation = new File("theNetworkerContactInformation.json");
     if(!contactInformation.exists()){
@@ -24,14 +21,28 @@ public class theNetworker{
          ioe.printStackTrace();
          System.out.println("Contact file found.");
       }
+      retrieveContact(allContacts,contactInformation);
     }
-    retrieveContact(allContacts,contactInformation);
+
     boolean exit = true;
-    // //Menu laucnh
-    // while(boolean){
-    //   System.out.println("")
-    //
-    // }
+    //Menu laucnh
+    Scanner userInput = new Scanner(System.in);
+
+    while(exit){
+      System.out.println("WHAT DO YOU WANT");
+      System.out.println("0 - Quit");
+      System.out.println("1 - New contact");
+      int in  = userInput.nextInt();
+      switch(in){
+        case 0: exit = false;
+        break;
+        case 1: addContact(allContacts);
+        encodeContact(allContacts);
+        break;
+      }
+
+
+    }
   }
 //USER INTERACTION FUNCTIONS
 //Encodes list of contacts to JSON
@@ -70,18 +81,19 @@ public class theNetworker{
   public static JSONObject addContact(JSONObject listToAdd){
     //user input for Conct credentials
     //Add contact to list
-    Contact bill = new Contact("bill","myers","email@outlook.ca","6131234567",1);
-    Contact margaret = new Contact("margaret","myers","margaret@outlook.ca","9381234567",2);
-    Contact bifll = new Contact("bill","myers","email@outlook.ca","6131234567",3);
-    Contact mafargaret = new Contact("masrgaret","myers","margaret@outlook.ca","9381234567",4);
-    Contact bidll = new Contact("bill","myers","email@outlook.ca","6131234567",5);
-    Contact marasgaret = new Contact("margaret","myers","margaret@outlook.ca","9381234567",6);
-    listToAdd.put(bill.getIDNumber(),bill);
-    listToAdd.put(margaret.getIDNumber(), margaret);
-    listToAdd.put(bifll.getIDNumber(),bifll);
-    listToAdd.put(mafargaret.getIDNumber(), mafargaret);
-    listToAdd.put(bidll.getIDNumber(),bidll);
-    listToAdd.put(marasgaret.getIDNumber(), marasgaret);
+    System.out.println("New contact option selected.");
+    Scanner userInput = new Scanner(System.in);
+    System.out.println("First name");
+    String fName = userInput.nextLine();
+    System.out.println("Last name");
+    String lName = userInput.nextLine();
+    System.out.println("Email");
+    String email = userInput.nextLine();
+    System.out.println("Phone");
+    String number = userInput.nextLine();
+
+    Contact x = new Contact(fName,lName,email,number,ID.newID());
+    listToAdd.put(x.getIDNumber(),x);
     return listToAdd;
   }
 }
