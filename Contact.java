@@ -1,17 +1,17 @@
-import java.time.LocalDateTime;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
+import java.time.LocalDateTime;
 
 public class Contact extends Schedualable{
   private JSONObject person = new JSONObject();
-
 //CONSTRUCTORS
   public Contact(String fN, String lN, String el, String pN, int idNumber){
+    super(LocalDateTime.now());
     person.put("firstName",fN);
     person.put("lastName",lN);
     person.put("email",el);
     person.put("phoneNumber",pN);
-    person.put("initDate",(""+LocalDateTime.now())+"");
+    person.put("initDate",(super.getInitDate().toString()));
     person.put("ID",idNumber);
   }
 

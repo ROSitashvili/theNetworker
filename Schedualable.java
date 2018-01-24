@@ -1,8 +1,17 @@
 import java.time.LocalDateTime;
 
-public abstract class Schedualable{
+public class Schedualable{
   //handles all the scheduling aspects: nextmeeting, frequency of meetings, urgency level
-  private LocalDateTime nextMeet;
+  private LocalDateTime initDate;
+  private LocalDateTime nextMeet;//Scheduled meeting date
+
+  public Schedualable(LocalDateTime initDate){
+    this.initDate = initDate;
+  }
+
+  public LocalDateTime getInitDate(){
+    return initDate;
+  }
 
   public void printAThing(){
     System.out.println("TESTING ABSTRACT CLASS");
