@@ -12,9 +12,13 @@ public class Schedualable{
   public LocalDateTime getInitDate(){
     return initDate;
   }
+  public LocalDateTime getNextMeet(){
+    return nextMeet;
+  }
 
   public void printAThing(){
     System.out.println("TESTING ABSTRACT CLASS");
   }
+  public
 
 }
